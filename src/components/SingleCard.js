@@ -11,7 +11,7 @@ const handleClick = () => {
 
     return (
         <div className="card">
-            <div className={flipped ? "flipped" : ""}>
+            <div className={flipped ? "flipped cardContainer" : "cardContainer"}>
                 <img className="front" id={card.id} src={card.src} alt="card front" />
                 <img 
                     className="back" 
