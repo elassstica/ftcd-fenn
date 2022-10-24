@@ -12,10 +12,10 @@ const handleClick = () => {
     return (
         <div className="card">
             <div className={flipped ? "flipped" : ""}>
-                <img className="front" id={card.id} scr={card.src} alt="card front" />
+                <img className="front" id={card.id} src={card.src} alt="card front" />
                 <img 
                     className="back" 
-                    scr="/img/cover.png" 
+                    src="/img/cover.png" 
                     onClick={handleClick} 
                     alt="card back" />
             </div>

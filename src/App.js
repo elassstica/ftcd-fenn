@@ -100,9 +100,9 @@ const handleChoice = (card) => {
 
   return (
     <div className="App">
-      <div class="marquee-w">
-        <div class="marquee">
-          <span class='marquee-span'>ONLINE FEMINIST CARD DECK&nbsp;&nbsp;&nbsp;</span>
+      <div className="marquee-w">
+        <div className="marquee">
+          <span className='marquee-span'>ONLINE FEMINIST CARD DECK&nbsp;&nbsp;&nbsp;</span>
         </div>
       </div>
         <button onClick={shuffleCards}>new game</button>
