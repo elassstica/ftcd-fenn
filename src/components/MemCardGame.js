@@ -1,70 +1,29 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-import SingleCard from "./components/SingleCard";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import SingleCard from "./SingleCard";
 
-function MemCardGame() {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5001/cardimages`)
-      .then((res) => {
-        const mappedCards = res.data.map((card) => {
-          return {
-            ...card,
-            matched: false,
-          };
-        });
-        setCards(mappedCards);
-      })
-      .catch((err) => alert(err));
-  }, []);
-
-  const [turns, setTurns] = useState(0);
+function MemCardGame({ cards, setCards }) {
+  const [deck, setDeck] = useState([]);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [turns, setTurns] = useState(0);
   const [disabled, setDisabled] = useState(false);
 
-  // shuffle cards
-
-  const shuffleCards = () => {
-    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setCards(shuffledCards);
-    setTurns(0);
-  };
-
   // handle a choice
-
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  // compare 2 selected cards
+  // shuffle cards
 
-  useEffect(() => {
-    if (choiceOne && choiceTwo) {
-      setDisabled(true);
-      if (choiceOne.principle === choiceTwo.principle) {
-        setCards((prevCards) => {
-          return prevCards.map((card) => {
-            if (card.principle === choiceOne.principle) {
-              return { ...card, matched: true };
-            } else {
-              return card;
-            }
-          });
-        });
-        resetTurn();
-      } else {
-        setTimeout(() => resetTurn(), 10000);
-      }
-    }
-  }, [choiceOne, choiceTwo]);
-
-  console.log(cards);
+  const shuffleCards = () => {
+    const shuffledCards = [...cards].sort(() => {
+      return Math.random() - 0.5;
+    });
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setDeck(shuffledCards);
+    setTurns(0);
+  };
 
   // reset choices & increase turn
 
@@ -79,32 +38,48 @@ function MemCardGame() {
 
   useEffect(() => {
     shuffleCards();
-  }, []);
+    // eslint-disable-next-line
+  }, [cards]);
+
+  // compare 2 selected cards
+
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      setDisabled(true);
+      if (choiceOne.principle === choiceTwo.principle) {
+        setDeck((prevCards) => {
+          return prevCards.map((card) => {
+            if (card.principle === choiceOne.principle) {
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          });
+        });
+        resetTurn();
+      } else {
+        setTimeout(resetTurn, 2000);
+      }
+    }
+  }, [choiceOne, choiceTwo]);
 
   return (
-    <div className="MemCardGame">
-      <div className="marquee-w">
-        <div className="marquee">
-          <span className="marquee-span">
-            ONLINE FEMINIST CARD DECK GAME&nbsp;&nbsp;&nbsp;
-          </span>
-        </div>
-      </div>
+    <>
+      {choiceOne && choiceTwo && <button onClick={resetTurn}>Reset</button>}
       <button onClick={shuffleCards}>new game</button>
-
       <div className="card-grid">
-        {cards.map((card) => (
+        {deck.map((card) => (
           <SingleCard
-            key={card.id}
+            key={card._id}
             card={card}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
             disabled={disabled}
           />
         ))}
+        <p>Turns: {turns}</p>
       </div>
-      <p>Turns: {turns}</p>
-    </div>
+    </>
   );
 }
 
