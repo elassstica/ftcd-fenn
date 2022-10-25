@@ -1,10 +1,10 @@
 import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function MemCardGame() {
-
-    
+function CardDisplay() {
   return (
-    <div className="MemCardGame">
+    <div className="CardDisplay">
       <div className="marquee-w">
         <div className="marquee">
           <span className="marquee-span">
@@ -18,4 +18,4 @@ function MemCardGame() {
   );
 }
 
-export default MemCardGame;
+export default CardDisplay;
