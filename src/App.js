@@ -3,44 +3,50 @@ import { useEffect, useState } from "react";
 import SingleCard from "./components/SingleCard";
 import axios from "axios";
 
-const cardImages = [
-  { id: 1, src: "/img/d1.png", matched: false },
-  { id: 2, src: "/img/d2.png", matched: false },
-  { id: 3, src: "/img/d3.png", matched: false },
-  { id: 4, src: "/img/d4.png", matched: false },
-  { id: 5, src: "/img/d5.png", matched: false },
-  { id: 6, src: "/img/d6.png", matched: false },
-  { id: 7, src: "/img/d7.png", matched: false },
-  { id: 8, src: "/img/d8.png", matched: false },
-  { id: 9, src: "/img/d9.png", matched: false },
-  { id: 10, src: "/img/d10.png", matched: false },
-  { id: 11, src: "/img/d11.png", matched: false },
-  { id: 12, src: "/img/d12.png", matched: false },
-  { id: 13, src: "/img/p1.png", matched: false },
-  { id: 14, src: "/img/p2.png", matched: false },
-  { id: 15, src: "/img/p3.png", matched: false },
-  { id: 16, src: "/img/p4.png", matched: false },
-  { id: 17, src: "/img/p5.png", matched: false },
-  { id: 18, src: "/img/p6.png", matched: false },
-  { id: 19, src: "/img/p7.png", matched: false },
-  { id: 20, src: "/img/p8.png", matched: false },
-  { id: 21, src: "/img/p9.png", matched: false },
-  { id: 22, src: "/img/p10.png", matched: false },
-  { id: 23, src: "/img/p11.png", matched: false },
-  { id: 24, src: "/img/p12.png", matched: false },
-];
+// const cardImages = [
+//   { id: 1, src: "/img/d1.png", matched: false },
+//   { id: 2, src: "/img/d2.png", matched: false },
+//   { id: 3, src: "/img/d3.png", matched: false },
+//   { id: 4, src: "/img/d4.png", matched: false },
+//   { id: 5, src: "/img/d5.png", matched: false },
+//   { id: 6, src: "/img/d6.png", matched: false },
+//   { id: 7, src: "/img/d7.png", matched: false },
+//   { id: 8, src: "/img/d8.png", matched: false },
+//   { id: 9, src: "/img/d9.png", matched: false },
+//   { id: 10, src: "/img/d10.png", matched: false },
+//   { id: 11, src: "/img/d11.png", matched: false },
+//   { id: 12, src: "/img/d12.png", matched: false },
+//   { id: 13, src: "/img/p1.png", matched: false },
+//   { id: 14, src: "/img/p2.png", matched: false },
+//   { id: 15, src: "/img/p3.png", matched: false },
+//   { id: 16, src: "/img/p4.png", matched: false },
+//   { id: 17, src: "/img/p5.png", matched: false },
+//   { id: 18, src: "/img/p6.png", matched: false },
+//   { id: 19, src: "/img/p7.png", matched: false },
+//   { id: 20, src: "/img/p8.png", matched: false },
+//   { id: 21, src: "/img/p9.png", matched: false },
+//   { id: 22, src: "/img/p10.png", matched: false },
+//   { id: 23, src: "/img/p11.png", matched: false },
+//   { id: 24, src: "/img/p12.png", matched: false },
+// ];
 
 function App() {
   const [cards, setCards] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:5000/cardImages`)
-  //     .then((res) => {
-  //       setCards(res.data.sort(() => Math.random() - 0.5));
-  //     })
-  //     .catch((err) => alert(err));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5001/cardimages`)
+      .then((res) => {
+        const mappedCards = res.data.map((card) => {
+          return {
+            ...card,
+            matched: false,
+          };
+        });
+        setCards(mappedCards);
+      })
+      .catch((err) => alert(err));
+  }, []);
 
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -50,10 +56,7 @@ function App() {
   // shuffle cards
 
   const shuffleCards = () => {
-    const shuffledCards = [...cardImages]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card }));
-
+    const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
     setChoiceOne(null);
     setChoiceTwo(null);
     setCards(shuffledCards);
@@ -71,11 +74,11 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
-      if (choiceOne.id === choiceTwo.id) {
+      if (choiceOne.principle === choiceTwo.principle) {
         // edit comparison id
         setCards((prevCards) => {
           return prevCards.map((card) => {
-            if (card.id === choiceOne.id) {
+            if (card.principle === choiceOne.principle) {
               return { ...card, matched: true };
             } else {
               return card;
@@ -84,7 +87,7 @@ function App() {
         });
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 3000);
+        setTimeout(() => resetTurn(), 10000);
       }
     }
   }, [choiceOne, choiceTwo]);
