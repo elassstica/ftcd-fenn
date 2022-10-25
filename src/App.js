@@ -75,7 +75,7 @@ function App() {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.principle === choiceTwo.principle) {
-        // edit comparison id
+
         setCards((prevCards) => {
           return prevCards.map((card) => {
             if (card.principle === choiceOne.principle) {
