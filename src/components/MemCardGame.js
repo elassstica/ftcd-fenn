@@ -65,10 +65,10 @@ function MemCardGame({ cards, setCards }) {
 
   return (
     <div>
-      {choiceOne && choiceTwo && <button onClick={resetTurn}>Reset</button>}
       <div className="controls">
-        <button onClick={shuffleCards}>new game</button>
-        <span className="turn-counter">Turns: {turns}</span>
+      {<button className="button1" onClick={resetTurn}>Next Move</button>}
+        <button className="button2" onClick={shuffleCards}>new game</button>
+        <button className="button3">Turns: {turns}</button>
       </div>
       <div className="grid-card">
         {deck.map((card) => (
