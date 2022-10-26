@@ -58,28 +58,32 @@ function MemCardGame({ cards, setCards }) {
         });
         resetTurn();
       } else {
-        setTimeout(resetTurn, 2000);
+        setTimeout(resetTurn, 6000);
       }
     }
   }, [choiceOne, choiceTwo]);
 
   return (
-    <>
+    <div>
       {choiceOne && choiceTwo && <button onClick={resetTurn}>Reset</button>}
-      <button onClick={shuffleCards}>new game</button>
-      <div className="card-grid">
-        {deck.map((card) => (
-          <SingleCard
-            key={card._id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
-        <p>Turns: {turns}</p>
+      <div className="controls">
+        <button onClick={shuffleCards}>new game</button>
+        <span className="turn-counter">Turns: {turns}</span>
       </div>
-    </>
+      <div className="grid-card">
+        {deck.map((card) => (
+          <div className="card-card">
+            <SingleCard
+              key={card._id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
