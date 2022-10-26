@@ -1,33 +1,52 @@
-* {
+@font-face {
+  font-family: "Univers";
+  src: local("UniversOblique"),
+  url("./fonts/UniversOblique.ttf")
+} 
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 html,body{
-  height: 100%;
-}
-
-.MemCardGame{
-  max-width: 860px;
-  margin:40px auto;
-}
-
-@font-face {
-  font-family: "Univers";
-  src: local("UniversOblique"),
-  url("./fonts/UniversOblique.ttf")
-}
-
-body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #bda6f8;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(166,197,242);
+  display: block;
   background: radial-gradient(circle, rgba(166,197,242,1) 50%, rgba(195,254,109,1) 100%);
 }
+
+.marquee{
+  position: absolute;
+  display: block;
+  margin: auto auto;
+  white-space: nowrap;
+}
+
+.marquee-span {
+  font-family: Univers;
+  font-style: italic;
+  display: inline-block;
+  display: inline-block;
+  text-align: center;
+  -webkit-text-stroke: 5px;
+  white-space: nowrap;
+  height: 80%;
+  line-height: 200px;
+  font-size: 85px;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
 
 button {
   background:none;
@@ -45,34 +64,8 @@ button:hover {
   color: #fff
 }
 
-.card-grid {
-  height: 800px;
-  width: 1400px;
-  align-self: center;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: (3, 1fr);
-  gap: 20px;
-  /* padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px; */
-}
-
-
-.card {
-  position: relative;
-    /* background-image: url("/ftcd-app-fe/public/img/cover.png"); */
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  padding: 5px;
-}
-
 .card img {
   display: block;
-  border: 2px solid #fff;
   border-radius: 6px;
 }
 
@@ -95,37 +88,15 @@ button:hover {
   transition-delay: 0s;
 }
 
-.marquee{
-  position: absolute;
-  display: block;
-  margin: auto auto;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 100%;
+.grid-card {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  /* gap:1rem; */
+  padding-top: 160px;
+  padding-left: 20px;
 }
 
-.marquee-span {
-  font-family: Univers;
-  font-style: italic;
-  display: inline-block;
-  display: inline-block;
-  padding-left: 100%;
-
-  text-align: center;
-  -webkit-text-stroke: 5px;
-  white-space: nowrap;
-  min-width: 100%;
-  height: 80%;
-  line-height: 70px;
-  font-size: 85px;
-  animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
+.card-card {
+  gap:1rem;
+  padding-top: 1rem;
 }

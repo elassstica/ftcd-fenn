@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MemCardGame from "./components/MemCardGame";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -25,15 +26,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className="marquee-w">
-        <div className="marquee">
+
+      {<div className="marquee">
           <span className="marquee-span">
-            ONLINE FEMINIST CARD DECK&nbsp;&nbsp;&nbsp;
+            ONLINE FEMINIST CARD GAME&nbsp;&nbsp;&nbsp;
           </span>
-        </div>
-      </div>
+      </div>}
 
       <MemCardGame cards={cards} setCards={setCards} />
+
     </div>
   );
 }

@@ -14,19 +14,17 @@ function CardDisplay() {
       .catch((err) => alert(err));
   }, []);
 
-  return (
-    <div className="CardDisplay">
-      <div className="marquee-w">
-        <div className="marquee">
-          <span className="marquee-span">
-            ONLINE FEMINIST CARD DECK&nbsp;&nbsp;&nbsp;
-          </span>
-        </div>
-      </div>
+  // return (
+  //   // <div className="CardDisplay">
+  //   //   <div className="marquee">
+  //   //       <span className="marquee-span">
+  //   //         ONLINE FEMINIST CARD DECK&nbsp;&nbsp;&nbsp;
+  //   //       </span>
+  //   //   </div>
 
-      <div className="card-grid"></div>
-    </div>
-  );
+  //   //   <div className="card-grid"></div>
+  //   // </div>
+  // );
 }
 
 export default CardDisplay;
