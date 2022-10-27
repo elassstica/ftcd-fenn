@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
+import GameMenu from "./GameMenu";
 
-function MemCardGame({ cards, setCards, gameLevel }) {
+function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const [deck, setDeck] = useState([]);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
@@ -77,6 +78,7 @@ function MemCardGame({ cards, setCards, gameLevel }) {
   return (
     <div>
       <div className="controls">
+        <GameMenu setGameLevel={setGameLevel} />
         {
           <button className="button1" onClick={resetTurn}>
             Next Move
