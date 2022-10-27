@@ -2,14 +2,15 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MemCardGame from "./components/MemCardGame";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [gameLevel, setGameLevel] = useState(12);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/cardimages`)
+      .get(`http://localhost:5001/cardimages?level=${gameLevel}`)
       .then((res) => {
         const mappedCards = res.data.map((card) => {
           return {
@@ -20,21 +21,21 @@ function App() {
         setCards(mappedCards);
       })
       .catch((err) => alert(err));
-  }, []);
+  }, [gameLevel, setGameLevel]);
 
   console.log(cards);
 
   return (
     <div className="App">
-
-      {<div className="marquee">
+      {
+        <div className="marquee">
           <span className="marquee-span">
             ONLINE FEMINIST CARD GAME&nbsp;&nbsp;&nbsp;
           </span>
-      </div>}
+        </div>
+      }
 
       <MemCardGame cards={cards} setCards={setCards} />
-
     </div>
   );
 }
