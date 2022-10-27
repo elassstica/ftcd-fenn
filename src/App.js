@@ -55,10 +55,6 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/download" element={<Download />} />
           <Route path="/superrr" element={<Superrr />} />
-          <Route
-            path="/menu"
-            element={<GameMenu setGameLevel={setGameLevel} />}
-          />
         </Routes>
       </div>
 
@@ -67,8 +63,12 @@ function App() {
             ONLINE FEMINIST CARD GAME&nbsp;&nbsp;&nbsp;
           </span>
       </div>} */}
-
-      <MemCardGame cards={cards} setCards={setCards} gameLevel={gameLevel} />
+      <MemCardGame
+        cards={cards}
+        setCards={setCards}
+        gameLevel={gameLevel}
+        setGameLevel={setGameLevel}
+      />
     </div>
   );
 }
