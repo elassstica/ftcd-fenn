@@ -58,7 +58,7 @@ function MemCardGame({ cards, setCards }) {
         });
         resetTurn();
       } else {
-        setTimeout(resetTurn, 6000);
+        setTimeout(resetTurn, 60000);
       }
     }
   }, [choiceOne, choiceTwo]);
