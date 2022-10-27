@@ -17,7 +17,51 @@ html,body{
   background: radial-gradient(circle, rgba(166,197,242,1) 50%, rgba(195,254,109,1) 100%);
 }
 
-.marquee{
+.container {
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 4rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  background-color: #555;
+}
+
+.nav li.hover {
+  background-color: #777;
+}
+
+/* .marquee{
   position: absolute;
   display: block;
   margin: auto auto;
@@ -36,32 +80,44 @@ html,body{
   line-height: 200px;
   font-size: 85px;
   animation: marquee 20s linear infinite;
-}
+} */
 
-@keyframes marquee {
+/* @keyframes marquee {
   0% {
     transform: translate(0, 0);
   }
   100% {
     transform: translate(-100%, 0);
   }
+} */
+
+.controls {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
 }
 
-
 button {
+  display: block;
+  width:120px;
+  height: 40px;
   background:none;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
   padding: 6px 12px;
-  border-radius: 4px;
-  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
   font-size: 1em;
+  margin: 20px;
+
 }
+
 
 button:hover {
   background: blueviolet;
-  color: #fff
+  color: #fff;
 }
 
 .card img {
@@ -92,11 +148,16 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   /* gap:1rem; */
-  padding-top: 160px;
   padding-left: 20px;
 }
 
 .card-card {
   gap:1rem;
   padding-top: 1rem;
+}
+
+.marquee {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 60px;
 }
