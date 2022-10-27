@@ -10,12 +10,14 @@ import Download from "./pages/Download";
 import Superrr from "./pages/Superrr";
 import { Route, Routes} from "react-router-dom"
 
+
 function App() {
   const [cards, setCards] = useState([]);
+  const [gameLevel, setGameLevel] = useState(12);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/cardimages`)
+      .get(`http://localhost:5001/cardimages?level=${gameLevel}`)
       .then((res) => {
         const mappedCards = res.data.map((card) => {
           return {
@@ -26,7 +28,7 @@ function App() {
         setCards(mappedCards);
       })
       .catch((err) => alert(err));
-  }, []);
+  }, [gameLevel, setGameLevel]);
 
   let component
   switch (window.location.pathname) {
@@ -64,7 +66,6 @@ function App() {
       </div>} */}
 
       <MemCardGame cards={cards} setCards={setCards} />
-
     </div>
   );
 }
