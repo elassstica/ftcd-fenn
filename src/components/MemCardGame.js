@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import GameMenu from "./GameMenu";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const [deck, setDeck] = useState([]);
@@ -8,7 +10,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [turns, setTurns] = useState(0);
   const [disabled, setDisabled] = useState(false);
-
+  const [match, setMatch] = useState(0);
 
   // handle a choice
   const handleChoice = (card) => {
@@ -54,12 +56,28 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
     // eslint-disable-next-line
   }, [cards]);
 
+  // notification when the game ends
+  const gameFinished = () => {
+    toast("You made all the matches! Hooray!!");
+  };
+
+  // notification when it's a match
+  const matchNotify = () => {
+    toast("It's a match!");
+  };
+
+  // const resetMatch = () => {
+  //   setMatch(0)
+  // }
+
   // compare 2 selected cards
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.principle === choiceTwo.principle) {
+        setMatch((prevMatch) => prevMatch + 1);
+        console.log(match, gameLevel);
         setDeck((prevCards) => {
           return prevCards.map((card) => {
             if (card.principle === choiceOne.principle) {
@@ -71,13 +89,31 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
         });
         resetTurn();
       } else {
-        setTimeout(resetTurn, 6000);
+        setTimeout(resetTurn, 60000);
+      }
+      if (choiceTwo.principle === choiceOne.principle) {
+        matchNotify();
+      }
+      if (match + 1 === +gameLevel) {
+        gameFinished();
       }
     }
   }, [choiceOne, choiceTwo]);
 
   return (
     <div>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="controls">
         <GameMenu setGameLevel={setGameLevel} />
         {
@@ -89,6 +125,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
           new game
         </button>
         <button className="button3">Turns: {turns}</button>
+        <button className="button4">Matches: {match}</button>
       </div>
       <div className={selectClass()}>
         {deck.map((card) => (
