@@ -53,9 +53,9 @@ html,body{
   padding: .25rem;
 }
 
-.nav li.active {
+/* .nav li.active {
   background-color: #555;
-}
+} */
 
 .nav li.hover {
   background-color: #777;
@@ -68,6 +68,14 @@ html,body{
   display: flex;
   align-items: center;
   padding: .25rem;
+  
+}
+
+.form-select-sm {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255);
 }
 
 /* .marquee{
@@ -104,6 +112,7 @@ html,body{
   padding-top: 100px;
   display: flex;
   justify-content: center ;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -141,16 +150,11 @@ button:hover {
 
 .flipped .front {
   transform: rotate(0deg);
+  border-radius: 10px;
 }
 
-.card .back {
-  transition: all ease-in 0.2s;
-  transition-delay: 0.2s;
-}
-
-.flipped .back {
-  transform: rotateY(90deg);
-  transition-delay: 0s;
+.back {
+  border-radius: 10px;
 }
 
 .grid-card-full {
@@ -170,9 +174,9 @@ button:hover {
 .grid-card-small {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap:1rem; */
   padding-left: 20px;
 }
+
 
 .card-card {
   gap:1rem;
@@ -184,3 +188,4 @@ button:hover {
   padding-top: 50px;
   font-size: 60px;
 }
+

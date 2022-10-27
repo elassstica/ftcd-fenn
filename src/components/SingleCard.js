@@ -9,7 +9,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
 
   return (
     <div>
-      <div className={flipped ? "flipped cardContainer" : "cardContainer"}>
+      <div className={flipped ? "flipped card-cover" : "card-cover"}>
         {flipped ? <img height={300}
           className="front"
           id={card._id}
