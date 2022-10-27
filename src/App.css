@@ -61,6 +61,15 @@ html,body{
   background-color: #777;
 }
 
+.gameMenu {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
 /* .marquee{
   position: absolute;
   display: block;
@@ -144,9 +153,23 @@ button:hover {
   transition-delay: 0s;
 }
 
-.grid-card {
+.grid-card-full {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  /* gap:1rem; */
+  padding-left: 20px;
+}
+
+.grid-card-med {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* gap:1rem; */
+  padding-left: 20px;
+}
+
+.grid-card-small {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   /* gap:1rem; */
   padding-left: 20px;
 }

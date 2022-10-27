@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 
-function MemCardGame({ cards, setCards }) {
+function MemCardGame({ cards, setCards, gameLevel }) {
   const [deck, setDeck] = useState([]);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
@@ -11,6 +11,17 @@ function MemCardGame({ cards, setCards }) {
   // handle a choice
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
+
+  // select class for game level
+  const selectClass = () => {
+    if (+gameLevel === 3) {
+      return "grid-card-small";
+    } else if (+gameLevel === 6) {
+      return "grid-card-med";
+    } else {
+      return "grid-card-full";
+    }
   };
 
   // shuffle cards
@@ -66,11 +77,17 @@ function MemCardGame({ cards, setCards }) {
   return (
     <div>
       <div className="controls">
-      {<button className="button1" onClick={resetTurn}>Next Move</button>}
-        <button className="button2" onClick={shuffleCards}>new game</button>
+        {
+          <button className="button1" onClick={resetTurn}>
+            Next Move
+          </button>
+        }
+        <button className="button2" onClick={shuffleCards}>
+          new game
+        </button>
         <button className="button3">Turns: {turns}</button>
       </div>
-      <div className="grid-card">
+      <div className={selectClass()}>
         {deck.map((card) => (
           <div className="card-card">
             <SingleCard
