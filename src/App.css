@@ -51,6 +51,7 @@ html,body{
   display: flex;
   align-items: center;
   padding: .25rem;
+  font-size: 4rem;
 }
 
 /* .nav li.active {
