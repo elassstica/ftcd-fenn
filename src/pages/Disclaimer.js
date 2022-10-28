@@ -1,7 +1,7 @@
 export default function Disclaimer() {
   return (
     <div>
-      <h1 className="tdisclaimer">Disclaimer</h1>
+      <h1 className="Tdisclaimer">Disclaimer</h1>
       <p className="disclaimer">Disclaimer blablabla</p>
     </div>
   );
