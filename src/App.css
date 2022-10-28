@@ -4,6 +4,20 @@
   url("./fonts/UniversOblique.ttf")
 } 
 
+@font-face {
+  font-family: "Basteleur-Bold";
+  src: local("Basteleur-Bold"),
+  url ("./fonts/Basteleur-Bold.otf")
+}
+
+@font-face {
+  font-family: "Riposte-Light";
+  src: local("Riposte-Light"),
+  url ("./fonts/Riposte-Light.otf")
+}
+
+@import url("hover-min.css");
+
 *{
   margin: 0;
   padding: 0;
@@ -12,9 +26,10 @@
 
 html,body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #bda6f8;
+  background-color: #ffffff;
   display: block;
-  background: radial-gradient(circle, rgba(166,197,242,1) 50%, rgba(195,254,109,1) 100%);
+  background: radial-gradient(circle, rgba(166,197,242,1) 50%, rgb(255, 255, 255) 150%);
+  opacity: 0.5;
 }
 
 .container {
@@ -22,16 +37,15 @@ html,body{
 }
 
 .nav {
-  color: white;
+  color: #6a37d9;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  background-color: white;
+  filter: drop-shadow(0px 5px 10px #6a37d9);
 }
 
-.site-title {
-  font-size: 4rem;
-  font-style: italic;
-}
+
 
 .nav ul {
   padding: 0;
@@ -43,21 +57,29 @@ html,body{
 }
 
 .nav a {
-  color: inherit;
   text-decoration: none;
   height: 100%;
   display: flex;
   align-items: center;
   padding: 2rem;
   font-size: 4rem;
+  color: #6a37d9;
+  
 }
 
-/* .nav li.active {
-  background-color: #555;
-} */
+.site-title {
+  font-family: "Basteleur-Bold";
+  font-size: 4rem;
+  font-style: bold;
+  color: #6a37d9;
+}
 
-.nav li.hover {
-  background-color: #777;
+.nav .sections{
+  font-family: "Riposte-Light";
+}
+
+.li .active{
+  color: #6a37d9;
 }
 
 .gameMenu {
@@ -110,7 +132,7 @@ html,body{
 
 .controls {
   padding-bottom: 3rem;
-  padding-top: 1rem;
+  padding-top: 4rem;
   display: flex;
   justify-content: center ;
   gap: 1rem;
@@ -140,8 +162,8 @@ button:hover {
 }
 
 .card img {
-  display: block;
-  border-radius: 6px;
+  display: grid;
+  border-radius: 20px;
 }
 
 .card .front {
@@ -151,42 +173,43 @@ button:hover {
 
 .flipped .front {
   transform: rotate(0deg);
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .back {
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .grid-card-full {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  /* gap:1rem; */
-  padding-left: 20px;
+  gap: 1rem;
 }
 
 .grid-card-med {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* gap:1rem; */
-  padding-left: 20px;
+  gap:1rem;
+  
 }
 
 .grid-card-small {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding-left: 20px;
+  gap: 1rem;
+  
 }
 
 
 .card-card {
   gap:1rem;
   padding-top: 1rem;
-}
+} 
 
 .marquee {
   text-align: center;
   padding-top: 50px;
   font-size: 60px;
 }
+
 

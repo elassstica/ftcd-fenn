@@ -7,11 +7,11 @@ function Navbar() {
       <Link to="/" className="site-title">
         Online Feminist Tech Card Deck
       </Link>
-      <ul>
-        <CustomLink to="/about">About</CustomLink>
-        <CustomLink to="/disclaimer">Disclaimer</CustomLink>
-        <CustomLink to="/download">Download Card Deck</CustomLink>
-        <CustomLink to="/superrr">Superrr Webiste</CustomLink>
+      <ul className="sections">
+        <CustomLink  to="/about">About</CustomLink>
+        <CustomLink  to="/disclaimer">Disclaimer</CustomLink>
+        <CustomLink  to="/download">Download Card Deck</CustomLink>
+        <CustomLink  to="/superrr">Superrr Webiste</CustomLink>
       </ul>
     </nav>
   );
