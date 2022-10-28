@@ -1,3 +1,8 @@
-export default function Disclaimer () {
-    return <h1>Disclaimer</h1>
+export default function Disclaimer() {
+  return (
+    <div>
+      <h1 className="tdisclaimer">Disclaimer</h1>
+      <p className="disclaimer">Disclaimer blablabla</p>
+    </div>
+  );
 }

@@ -58,7 +58,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
 
   // notification when the game ends
   const gameFinished = () => {
-    toast("You made all the matches! Hooray!!");
+    toast("You've completed the game! Hooray!!");
   };
 
   // notification when it's a match

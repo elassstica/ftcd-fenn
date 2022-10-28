@@ -49,26 +49,20 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container">
+      <div className="container-lg">
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/download" element={<Download />} />
           <Route path="/superrr" element={<Superrr />} />
+          <Route path="/start" element={<MemCardGame
+            cards={cards}
+            setCards={setCards}
+            gameLevel={gameLevel}
+            setGameLevel={setGameLevel}
+          />} /> 
         </Routes>
       </div>
-
-      {/* {<div className="marquee">
-          <span className="marquee-span">
-            ONLINE FEMINIST CARD GAME&nbsp;&nbsp;&nbsp;
-          </span>
-      </div>} */}
-      <MemCardGame
-        cards={cards}
-        setCards={setCards}
-        gameLevel={gameLevel}
-        setGameLevel={setGameLevel}
-      />
     </div>
   );
 }
