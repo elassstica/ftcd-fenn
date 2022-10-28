@@ -1,19 +1,19 @@
 @font-face {
   font-family: "Univers";
   src: local("UniversOblique"),
-  url("./fonts/UniversOblique.ttf")
+  url("./fonts/UniversOblique.ttf") format("truetype")
 } 
 
 @font-face {
   font-family: "Basteleur-Bold";
   src: local("Basteleur-Bold"),
-  url ("./fonts/Basteleur-Bold.otf")
+  url("./fonts/Basteleur-Bold.otf") format("opentype")
 }
 
 @font-face {
   font-family: "Riposte-Light";
   src: local("Riposte-Light"),
-  url ("./fonts/Riposte-Light.otf")
+  url("./fonts/Riposte-Light.otf") format("opentype")
 }
 
 
@@ -71,7 +71,7 @@ html,body{
 }
 
 .site-title {
-  font-family: "Basteleur-Bold";
+  font-family: "Basteleur-Bold" !important;
   font-size: 4rem;
   font-style: bold;
   color: #6a37d9;
