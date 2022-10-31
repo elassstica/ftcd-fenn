@@ -12,6 +12,14 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const [disabled, setDisabled] = useState(false);
   const [match, setMatch] = useState(0);
 
+  const clearMatch = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(0);
+    setMatch(0);
+    setDisabled(false);
+  };
+
   // handle a choice
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -38,6 +46,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
     setChoiceTwo(null);
     setDeck(shuffledCards);
     setTurns(0);
+    setMatch(0);
   };
 
   // reset choices & increase turn
@@ -103,7 +112,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   return (
     <div>
       <ToastContainer
-        position="top-left"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -115,7 +124,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
         theme="light"
       />
       <div className="controls">
-        <GameMenu setGameLevel={setGameLevel} />
+        <GameMenu setGameLevel={setGameLevel} clearMatch={clearMatch} />
         {
           <button className="button1" onClick={resetTurn}>
             Next Move

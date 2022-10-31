@@ -9,7 +9,7 @@ import Disclaimer from "./pages/Disclaimer";
 import Download from "./pages/Original";
 import Superrr from "./pages/Superrr";
 import { Route, Routes } from "react-router-dom";
-import GameMenu from "./components/GameMenu";
+import Home from "./components/Home";
 import HowTo from "./pages/HowTo";
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
       <Navbar />
       <div className="container-lg">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/download" element={<Download />} />
