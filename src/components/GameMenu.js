@@ -1,10 +1,11 @@
-function GameMenu({ setGameLevel }) {
+function GameMenu({ setGameLevel, clearMatch }) {
   return (
     <div className="GameMenu">
       <select
         className="form-select-sm"
         aria-label=".form-select-sm"
         onChange={(e) => {
+          clearMatch();
           setGameLevel(e.target.value);
         }}
       >
