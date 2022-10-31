@@ -11,6 +11,7 @@ import Superrr from "./pages/Superrr";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import HowTo from "./pages/HowTo";
+import Display from "./components/Display";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -28,7 +29,7 @@ function App() {
         });
         setCards(mappedCards);
       })
-      .catch((err) => alert(err));
+      .catch((err) => console.log(err));
   }, [gameLevel, setGameLevel]);
 
   let component;
@@ -58,6 +59,8 @@ function App() {
           <Route path="/download" element={<Download />} />
           <Route path="/superrr" element={<Superrr />} />
           <Route path="/howto" element={<HowTo />} />
+          <Route path="/display" element={<Display />} />
+
           <Route
             path="/start"
             element={
