@@ -6,10 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
-import Download from "./pages/Download";
+import Download from "./pages/Original";
 import Superrr from "./pages/Superrr";
 import { Route, Routes } from "react-router-dom";
 import GameMenu from "./components/GameMenu";
+import HowTo from "./pages/HowTo";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -55,12 +56,18 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/download" element={<Download />} />
           <Route path="/superrr" element={<Superrr />} />
-          <Route path="/start" element={<MemCardGame
-            cards={cards}
-            setCards={setCards}
-            gameLevel={gameLevel}
-            setGameLevel={setGameLevel}
-          />} /> 
+          <Route path="/howto" element={<HowTo />} />
+          <Route
+            path="/start"
+            element={
+              <MemCardGame
+                cards={cards}
+                setCards={setCards}
+                gameLevel={gameLevel}
+                setGameLevel={setGameLevel}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>
