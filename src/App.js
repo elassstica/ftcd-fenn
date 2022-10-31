@@ -4,7 +4,7 @@ import axios from "axios";
 import MemCardGame from "./components/MemCardGame";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
+import About from "./components/About";
 import Disclaimer from "./pages/Disclaimer";
 import Download from "./pages/Original";
 import Superrr from "./pages/Superrr";
