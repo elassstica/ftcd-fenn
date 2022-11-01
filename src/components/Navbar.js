@@ -12,6 +12,7 @@ function Navbar() {
         <CustomLink to="/disclaimer">Disclaimer</CustomLink>
         <CustomLink to="/download">Download Card Deck</CustomLink>
         <CustomLink to="/superrr">Superrr Webiste</CustomLink>
+        <CustomLink to="/display">Display Cards</CustomLink>
       </ul>
     </nav>
   );
