@@ -58,7 +58,7 @@ html,body{
   list-style: none;
   display: flex;
   gap: 1rem;
-
+  margin-left: auto;
 }
 
 .nav a {
@@ -90,18 +90,20 @@ html,body{
   font-size: 6rem !important;
   font-weight: 600 !important;
   letter-spacing: 4px;
-  margin-right: auto !important;
+  /* margin-right: auto !important; */
   font-style: bold;
   color: #ffffff !important;
   animation: animate 40s linear infinite;
   display: inline-block;
-  width: 50%;
   text-decoration: none !important;
+  position: relative;
+  left: 100px;
+  
 }
 
 @keyframes animate {
   100%{
-    transform: translate(-100%, 0);
+    transform: translate(-200%, 0);
   }
 }
 

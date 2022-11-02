@@ -5,8 +5,7 @@ function Navbar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-t">
-        {/* ONLINE FEMINIST TECH CARD GAME | ONLINE FEMINIST TECH CARD GAME */}
-        OFTCG
+        ONLINE FEMINIST TECH CARD GAME
       </Link>
       <ul className="sections">
         <CustomLink to="/about">About</CustomLink>
