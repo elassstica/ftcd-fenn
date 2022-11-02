@@ -136,6 +136,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
         <button className="button3">Turns: {turns}</button>
         <button className="button4">Matches: {match}</button>
       </div>
+      <div className="page-center">
       <div className={selectClass()}>
         {deck.map((card) => (
           <div className="card-card">
@@ -148,6 +149,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
             />
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
