@@ -12,6 +12,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import HowTo from "./pages/HowTo";
 import Display from "./components/Display";
+import Footer from "./components/Footer";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -73,6 +74,7 @@ function App() {
             }
           />
         </Routes>
+        <h1 className="title" id="end">-</h1>
       </div>
     </div>
   );

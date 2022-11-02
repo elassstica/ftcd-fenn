@@ -1,7 +1,7 @@
 export default function Superrr () {
     return (
         <div>
-            <h1>Superrr</h1>
+            <h1 className="title">Superrr</h1>
 
         </div>
     )

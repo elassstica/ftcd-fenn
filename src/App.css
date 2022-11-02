@@ -42,12 +42,18 @@ html,body{
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #d9f794;
+  /* background-color: #d9f794; */
+  /* background-image: url("./fonts/background\ navbar.png"); */
+  background: rgb(67,75,217);
+  background: linear-gradient(126deg, rgba(67,75,217,1) 29%, rgba(26,45,183,1) 43%, rgba(142,59,226,1) 80%, rgba(244,105,129,1) 97%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 243 243'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='franctalNoise' baseFrequency='2.3'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='URL(%23noiseFilter)' /%3E%3C/svg%3E");
+  filter: contrast(200%) brightness(200%);
   filter: drop-shadow(0px 5px 10px #6a37d9);
+  white-space: nowrap;
 }
 
 .nav ul {
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   list-style: none;
   display: flex;
@@ -60,9 +66,11 @@ html,body{
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 2rem;
-  font-size: 4rem;
-  color: #6a37d9;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .nav a:hover {
@@ -70,16 +78,37 @@ html,body{
   text-decoration: none;
 }
 
-.site-title {
-  font-family: "Basteleur-Bold" !important;
-  font-size: 4rem;
-  font-style: bold;
-  color: #6a37d9;
+.nav a:active {
+  text-decoration: none;
+  color: #ff4101;
 }
 
-.nav .sections{
-  font-family: "Riposte-Light";
+.site-t {
+  /* font-family: "Basteleur-Bold" !important; */
+  font-family: "Riposte-Light" !important;
+  font-style: italic;
+  font-size: 6rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 4px;
+  margin-right: auto !important;
+  font-style: bold;
+  color: #ffffff !important;
+  animation: animate 40s linear infinite;
+  display: inline-block;
+  width: 50%;
+  text-decoration: none !important;
 }
+
+@keyframes animate {
+  100%{
+    transform: translate(-100%, 0);
+  }
+}
+
+/* .sections{
+  font-size: 20px;
+  font-family: "Riposte-Light"; 
+} */
 
 .li .active{
   color: #6a37d9;
@@ -108,38 +137,6 @@ html,body{
 
 }
 
-
-
-/* .marquee{
-  position: absolute;
-  display: block;
-  margin: auto auto;
-  white-space: nowrap;
-}
-
-.marquee-span {
-  font-family: Univers;
-  font-style: italic;
-  display: inline-block;
-  display: inline-block;
-  text-align: center;
-  -webkit-text-stroke: 5px;
-  white-space: nowrap;
-  height: 80%;
-  line-height: 200px;
-  font-size: 85px;
-  animation: marquee 20s linear infinite;
-} */
-
-/* @keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
-} */
-
 .controls {
   padding-bottom: 3rem;
   padding-top: 4rem;
@@ -156,20 +153,28 @@ button {
   background:none;
   border: 2px solid rgb(116,61,235);
   padding: 6px 12px;
-  border-radius: 8px;
-  color: rgb(255, 255, 255);
+  /* border-radius: 8px; */
+  color: rgb(0, 0, 0);
   font-weight: bold;
   cursor: pointer;
   font-size: 1em;
   margin: 20px;
-
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s
 }
-
 
 button:hover {
   background: blueviolet;
-  color: #fff;
+  color: rgb(116,61,235);
   background-color: #d9f794;
+}
+
+.btn-contaner{
+  text-align: center;
+}
+
+.button5{
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .card img {
@@ -226,5 +231,68 @@ button:hover {
   padding-top: 50px;
   font-size: 60px;
 }
+
+.title{
+  padding: 2rem;
+  /* padding-top: 2rem;
+  padding-bottom: 2rem; */
+  font-family: "Basteleur-Bold";
+  font-family: "Riposte-Light";
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #6a37d9;
+  max-width: 30%;
+  margin: auto;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+
+
+.text {
+  font-family: "Riposte-Light";
+  text-align: center;
+  max-width: 30%;
+  margin: auto;
+  list-style: none;
+  font-size: 16px;
+  /* padding-bottom: 2em;
+  padding-top: 2rem; */
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f96c7c;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */       /* roundness of the scroll thumb */
+  border: 3px solid #f96c7c;  /* creates padding around scroll thumb */
+}
+
+#homepage{
+  padding-top: 5rem;
+}
+
+#end{
+  padding-bottom: 20rem;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: rgb(175, 27, 27);
+  text-align: center;
+}
+
+
+
+
 
 

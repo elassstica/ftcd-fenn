@@ -1,8 +1,8 @@
 function About() {
   return (
     <div className="Home">
-      <h1>About This Game</h1>
-      <p>
+      <h1 className="title">About This Game</h1>
+      <p className="text">
         Welcome to the online version of the Feminist Tech Card Deck! We are
         thrilled to have you here! This is a game inspired by the 12 feminist
         tech principles by SuperrrLab by means of a memory card game that mimics

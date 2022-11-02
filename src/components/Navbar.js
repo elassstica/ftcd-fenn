@@ -4,15 +4,16 @@ import GameMenu from "./GameMenu";
 function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/" className="site-title">
-        Online Feminist Tech Card Game
+      <Link to="/" className="site-t">
+        {/* ONLINE FEMINIST TECH CARD GAME | ONLINE FEMINIST TECH CARD GAME */}
+        OFTCG
       </Link>
       <ul className="sections">
         <CustomLink to="/about">About</CustomLink>
         <CustomLink to="/disclaimer">Disclaimer</CustomLink>
-        <CustomLink to="/download">Download Card Deck</CustomLink>
-        <CustomLink to="/superrr">Superrr Webiste</CustomLink>
-        <CustomLink to="/display">Display Cards</CustomLink>
+        <CustomLink to="/download">Download deck</CustomLink>
+        <CustomLink to="/superrr">Superrr's web</CustomLink>
+        <CustomLink to="/display">Display cards</CustomLink>
       </ul>
     </nav>
   );

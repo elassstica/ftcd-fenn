@@ -1,8 +1,8 @@
 function HowTo() {
   return (
-    <div className="HowTo">
-      <h1>How To Play This Game</h1>
-      <ol>
+    <div >
+      <h1 className="title">How To Play This Game</h1>
+      <ul className="text">
         <li>
           1. Get comfy and cozy. Get a nice cup of tea, cocoa, glass of wine or
           lemonade. Always stay hydrated.
@@ -31,7 +31,7 @@ function HowTo() {
             the upper right side of your screen will appear.{" "}
           </li>
         </li>
-      </ol>
+      </ul>
     </div>
   );
 }

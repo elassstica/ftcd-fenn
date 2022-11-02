@@ -1,8 +1,8 @@
 export default function Disclaimer() {
   return (
     <div>
-      <h1 className="tdisclaimer">Disclaimer</h1>
-      <p className="disclaimer">
+      <h1 className="title">Disclaimer</h1>
+      <p className="text">
         Please note that this is an adaptation of the original{" "}
         <a href="https://superrr.net/feministtech/">Feminist Tech Card Deck</a>{" "}
         from <a href="https://superrr.net/">SuperrrLab</a> to an online format.
