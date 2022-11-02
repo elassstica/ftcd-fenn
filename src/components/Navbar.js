@@ -13,7 +13,7 @@ function Navbar() {
         <CustomLink to="/about">About</CustomLink>
         <CustomLink to="/disclaimer">Disclaimer</CustomLink>
         <CustomLink to="/download">Download deck</CustomLink>
-        <CustomLink href="/superrr">Superrr's web</CustomLink>
+        <CustomLink href="https://superrr.net/">SuperrrLab</CustomLink>
         <CustomLink to="/display">Display cards</CustomLink>
       </ul>
     </nav>
@@ -21,14 +21,17 @@ function Navbar() {
 }
 
 // /pricing/todos
-function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, href, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
   return (
     <li className={isActive ? "active" : " "}>
-      <Link className="nav-links" to={to} {...props}>
+        {to && <Link className="nav-links" to={to} {...props}>
         {children}
-      </Link>
+      </Link>}
+      {href && <a target='blank' className="nav-links"  href={href}>
+        {children}
+        </a>}
     </li>
   );
 }
