@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import carousel from 'react-bootstrap/Button';
 
 function Display() {
   const [display, setDisplay] = useState([]);
@@ -39,16 +40,19 @@ function Display() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="Display">
-      {display.map((card) => {
-        return (
-          <div className="img-display" key={card.principle.principle}>
-            <img src={card.principle.image} height={250} width={200} />
-            <img src={card.description.image} height={250} />
-            <img src={card.question.image} height={250} />
-          </div>
-        );
-      })}
+    <div className="Display-all">
+      <div>
+        <h1 className="title">FEMINIST TECH PRINCIPLES</h1>
+        {display.map((card) => {
+          return (
+            <div className="img-display" key={card.principle.principle}>
+              <img className="display-single" src={card.principle.image} height={550} />
+              <img className="display-single" src={card.description.image} height={550} />
+              <img className="display-single" src={card.question.image} height={550} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
