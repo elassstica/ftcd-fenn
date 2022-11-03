@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Univers";
   src: local("UniversOblique"),
-  url("./fonts/UniversOblique.ttf") format("truetype")
+  url("fonts/UniversOblique.ttf") format("truetype")
 } 
 
 @font-face {
@@ -276,10 +276,10 @@ button:hover {
   padding-bottom: 2rem; */
   font-family: "Basteleur-Bold";
   font-family: "Riposte-Light";
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1px;
   text-align: center;
-  color: #8021c0;
+  color: rgba(26,45,183,1);
   max-width: 50%;
   margin: auto;
   text-transform: uppercase;
@@ -293,7 +293,7 @@ button:hover {
   max-width: 40%;
   margin: auto;
   list-style: none;
-  font-size: 25px;
+  font-size: 20px;
   /* padding-bottom: 2em;
   padding-top: 2rem; */
 }

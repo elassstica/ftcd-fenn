@@ -4,9 +4,10 @@ import GameMenu from "./GameMenu";
 function Navbar() {
   return (
     <nav className="nav">
+      <img src="fonts/noun.svg"></img>
       <div id="infinite">
       <Link to="/" className="site-t">
-        ONLINE FEMINIST TECH CARD GAME
+        OFTCG
       </Link>
       </div>
       <ul className="sections">
