@@ -220,7 +220,7 @@ button:hover {
 
 .grid-card-full {
   display: grid;
-  grid-template-columns: repeat(8, 210px);
+  grid-template-columns: repeat(8, 165px);
   gap: 0.5rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
@@ -228,7 +228,7 @@ button:hover {
 
 .grid-card-med {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(4, 150px);
   gap:1rem; 
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
@@ -236,7 +236,7 @@ button:hover {
 
 .grid-card-small {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 150px);
   gap: 1rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
