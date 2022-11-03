@@ -1,10 +1,12 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import GameMenu from "./GameMenu";
+import Logo from "../fonts/noun.svg"
 
 function Navbar() {
   return (
     <nav className="nav">
-      <img src="fonts/noun.svg"></img>
+      <img src="fonts/nou
+      {/* <img src={Logo}/> */}n.svg"></img>
       <div id="infinite">
       <Link to="/" className="site-t">
         OFTCG

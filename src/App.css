@@ -113,16 +113,16 @@ html,body{
 }
 
 
-/* @keyframes animate {
+@keyframes animate {
   100%{
     transform: translate(-50%, 0);
   }
-} */
+}
 
-/* .sections{
+.sections{
   font-size: 20px;
   font-family: "Riposte-Light"; 
-} */
+}
 
 .li .active{
   color: #6a37d9;
@@ -154,6 +154,7 @@ html,body{
 
 .form-select-sm:active, 
 .form-select-sm:focus {
+  outline: none;
   border-radius: 0 !important;
   border: 2px solid rgb(116,61,235) !important;
 }
@@ -219,6 +220,7 @@ button:hover {
 }
 
 .grid-card-full {
+  margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(8, 165px);
   gap: 0.5rem;
@@ -227,6 +229,7 @@ button:hover {
 }
 
 .grid-card-med {
+  margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(4, 150px);
   gap:1rem; 
