@@ -10,12 +10,12 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
   return (
     <div>
       <div className={flipped ? "flipped card-cover" : "card-cover"}>
-        {flipped ? <img height={200}
+        {flipped ? <img height={250}
           className="front"
           id={card._id}
           src={card.image}
           alt="card front"
-        /> : <img height={200}
+        /> : <img height={250}
           className="back"
           src="/img/cover.png"
           onClick={handleClick}

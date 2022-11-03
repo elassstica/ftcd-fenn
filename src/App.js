@@ -74,7 +74,6 @@ function App() {
             }
           />
         </Routes>
-        <h1 className="title" id="end">-</h1>
       </div>
     </div>
   );

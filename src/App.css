@@ -1,7 +1,9 @@
+/* fonts */
+
 @font-face {
   font-family: "Univers";
   src: local("UniversOblique"),
-  url("fonts/UniversOblique.ttf") format("truetype")
+  url("fonts/UniversOblique.ttf") format("truetype"),
 } 
 
 @font-face {
@@ -16,6 +18,7 @@
   url("./fonts/Riposte-Light.otf") format("opentype")
 }
 
+/* general */
 
 *{
   margin: 0;
@@ -23,19 +26,12 @@
   box-sizing: border-box;
 }
 
-html,body{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #ffffff;
-  display: block;
-}
-
-.App {
-  background-color: #ffffff;
-}
 
 .container {
   text-align: center;
 }
+
+/* navbar */
 
 .nav {
   color: #6a37d9;
@@ -43,8 +39,7 @@ html,body{
   justify-content: space-between;
   align-items: stretch;
   /* background-color: #d9f794; */
-  /* background-image: url("./fonts/background\ navbar.png"); */
-  background: rgb(67,75,217);
+  background-image: url("./fonts/background\ navbar.png");
   background: linear-gradient(126deg, rgba(67,75,217,1) 29%, rgba(26,45,183,1) 43%, rgba(142,59,226,1) 80%, rgba(244,105,129,1) 97%),
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 243 243'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='franctalNoise' baseFrequency='2.3'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='URL(%23noiseFilter)' /%3E%3C/svg%3E");
   filter: contrast(200%) brightness(200%);
@@ -94,6 +89,7 @@ html,body{
   color:#ff4101;
   outline: none;
 }
+
 #infinite{
   width:250px!important; /* or whatever width you want. */
   max-width:250px !important; /* or whatever width you want. */
@@ -102,14 +98,17 @@ html,body{
 .site-t {
   font-family: "Basteleur-Bold" !important;
   font-family: "Riposte-Light" !important;
-  font-style: italic;
-  font-size: 6rem !important;
-  font-weight: 600 !important;
+  font-style: italic; 
+  font-size: 7rem !important;
+  font-weight: 800 !important;
   letter-spacing: 4px;
   margin-right: auto !important;
   font-style: bold;
   color: #ffffff !important;
   animation: animate 10s linear infinite;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+	-webkit-text-fill-color: white;
+
 }
 
 
@@ -127,6 +126,21 @@ html,body{
 .li .active{
   color: #6a37d9;
 }
+
+.logo{
+  margin-top: 3px;
+  margin-left: 2rem;
+  width: 60px;
+  color: white;
+  -webkit-animation:spin 20s linear infinite;
+  -moz-animation:spin 20s linear infinite;
+  animation:spin 20s linear infinite;
+  justify-content: center;
+  align-items: center;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .gameMenu {
   color: inherit;
@@ -159,8 +173,9 @@ html,body{
 }
 
 .controls {
-  padding-bottom: 3rem;
+  margin-top: 5rem;
   padding-top: 4rem;
+  padding-bottom: 3rem;
   display: flex;
   justify-content: center ;
   gap: 1rem;
@@ -219,24 +234,25 @@ button:hover {
 }
 
 .grid-card-full {
+
   display: grid;
-  grid-template-columns: repeat(8, 165px);
-  gap: 0.5rem;
+  grid-template-columns: repeat(8, 200px);
+  gap: 1.5rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
 }
 
 .grid-card-med {
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  gap:1rem; 
+  grid-template-columns: repeat(4, 200px);
+  gap:1.5rem; 
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
 }
 
 .grid-card-small {
   display: grid;
-  grid-template-columns: repeat(3, 150px);
+  grid-template-columns: repeat(3, 200px);
   gap: 1rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
@@ -249,7 +265,6 @@ button:hover {
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
   padding: 10rem;
-
 }
 
 .display-single{
@@ -336,6 +351,23 @@ body::-webkit-scrollbar-thumb {
 .Display-all{
   padding-top: 10rem;
 }
+
+.noise {
+	position: relative;
+	z-index: 1;
+	}
+
+  html,body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-size: cover;
+    background-image: url(./fonts/v904-nunny-012.jpg);
+    display: block;
+  }
+		
+
+
+
+
 
 
 
