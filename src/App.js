@@ -18,6 +18,8 @@ function App() {
   const [cards, setCards] = useState([]);
   const [gameLevel, setGameLevel] = useState(12);
 
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   useEffect(() => {
     axios
       .get(`/cardimages?level=${gameLevel}`)
