@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "./axiosClient";
 import MemCardGame from "./components/MemCardGame";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/cardimages?level=${gameLevel}`)
+      .get(`/cardimages?level=${gameLevel}`)
       .then((res) => {
         const mappedCards = res.data.map((card) => {
           return {
@@ -74,7 +74,9 @@ function App() {
             }
           />
         </Routes>
-        <h1 className="title" id="end">-</h1>
+        <h1 className="title" id="end">
+          -
+        </h1>
       </div>
     </div>
   );
