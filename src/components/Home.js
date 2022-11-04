@@ -14,6 +14,7 @@ function Home() {
           Welcome to the Online Feminist Tech Card Game, we are thrilled to have
           you!
         </p>
+
         <div className="btn-container">
           <button className="button5"
             onClick={() => {

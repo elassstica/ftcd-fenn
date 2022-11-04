@@ -30,6 +30,7 @@ function Display() {
       .catch((err) => console.log(err));
   }, []);
   return (
+    <div>
     <div className="Display-all">
       <div>
         <h1 className="title">FEMINIST TECH PRINCIPLES</h1>
@@ -55,6 +56,7 @@ function Display() {
           );
         })}
       </div>
+    </div>
     </div>
   );
 }

@@ -1,15 +1,16 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import GameMenu from "./GameMenu";
-import Logo from "../fonts/noun.svg"
+import Logo7 from "../fonts/logo7-02.svg";
+
+
 
 function Navbar() {
   return (
-    <nav className="nav">
-      <img src="fonts/nou
-      {/* <img src={Logo}/> */}n.svg"></img>
+    <nav className="nav body-noise">
+      <img src={Logo7} className="logo"/>
       <div id="infinite">
       <Link to="/" className="site-t">
-        OFTCG
+        Feminist Tech Card Game
       </Link>
       </div>
       <ul className="sections">
@@ -18,6 +19,7 @@ function Navbar() {
         <CustomLink to="/download">Download deck</CustomLink>
         <CustomLink href="https://superrr.net/">SuperrrLab</CustomLink>
         <CustomLink to="/display">Display cards</CustomLink>
+
       </ul>
     </nav>
   );

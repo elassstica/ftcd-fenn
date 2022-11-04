@@ -1,7 +1,9 @@
+/* fonts */
+
 @font-face {
   font-family: "Univers";
   src: local("UniversOblique"),
-  url("fonts/UniversOblique.ttf") format("truetype")
+  url("fonts/UniversOblique.ttf") format("truetype"),
 } 
 
 @font-face {
@@ -16,6 +18,7 @@
   url("./fonts/Riposte-Light.otf") format("opentype")
 }
 
+/* general */
 
 *{
   margin: 0;
@@ -23,19 +26,12 @@
   box-sizing: border-box;
 }
 
-html,body{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #ffffff;
-  display: block;
-}
-
-.App {
-  background-color: #ffffff;
-}
 
 .container {
   text-align: center;
 }
+
+/* navbar */
 
 .nav {
   color: #6a37d9;
@@ -43,8 +39,7 @@ html,body{
   justify-content: space-between;
   align-items: stretch;
   /* background-color: #d9f794; */
-  /* background-image: url("./fonts/background\ navbar.png"); */
-  background: rgb(67,75,217);
+  background-image: url("./fonts/background\ navbar.png");
   background: linear-gradient(126deg, rgba(67,75,217,1) 29%, rgba(26,45,183,1) 43%, rgba(142,59,226,1) 80%, rgba(244,105,129,1) 97%),
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 243 243'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='franctalNoise' baseFrequency='2.3'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='URL(%23noiseFilter)' /%3E%3C/svg%3E");
   filter: contrast(200%) brightness(200%);
@@ -74,26 +69,39 @@ html,body{
 }
 
 .nav a:hover {
-  color: #ff4101;
   text-decoration: none;
 }
-
+.nav a:focus {
+  text-decoration: none;
+}
 .nav a:active {
   text-decoration: none;
-  color: #ff4101;
 }
-
 .nav a:visited {
   text-decoration: none;
+}
+
+.sections a:hover {
+  color: #ffffff;
+  transform:scale(1.1);
+}
+
+.sections a:active {
+  color: #ffffff;
+  transform:scale(1.1);
+}
+
+.sections a:visited {
   color: #ffffff;
   outline: none;
 }
 
-.nav a:focus {
-  text-decoration: none;
-  color:#ff4101;
+.sections a:focus {
+  color:#ffffff;
   outline: none;
+  transform:scale(1.1);
 }
+
 #infinite{
   width:250px!important; /* or whatever width you want. */
   max-width:250px !important; /* or whatever width you want. */
@@ -102,14 +110,17 @@ html,body{
 .site-t {
   font-family: "Basteleur-Bold" !important;
   font-family: "Riposte-Light" !important;
-  font-style: italic;
-  font-size: 6rem !important;
-  font-weight: 600 !important;
+  font-style: italic; 
+  font-size: 7rem !important;
+  font-weight: 800 !important;
   letter-spacing: 4px;
   margin-right: auto !important;
   font-style: bold;
   color: #ffffff !important;
   animation: animate 10s linear infinite;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+	-webkit-text-fill-color: white;
+
 }
 
 
@@ -128,19 +139,33 @@ html,body{
   color: #6a37d9;
 }
 
+.logo{
+  margin-top: 3px;
+  margin-left: 2rem;
+  width: 60px;
+  color: white;
+  -webkit-animation:spin 20s linear infinite;
+  -moz-animation:spin 20s linear infinite;
+  animation:spin 20s linear infinite;
+  justify-content: center;
+  align-items: center;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 .gameMenu {
   color: inherit;
   text-decoration: none;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: .25rem;
   background-color: #d9f794;
   ;
 }
 
 .form-select-sm {
-  padding: 1rem;
+  padding: 0.85rem;
   background-color: transparent;
   border: 2px solid rgb(116,61,235);  
   transition: border-color 0.5s, background-color 0.5s, color 0.5s
@@ -160,8 +185,8 @@ html,body{
 }
 
 .controls {
-  padding-bottom: 3rem;
   padding-top: 4rem;
+  padding-bottom: 5rem;
   display: flex;
   justify-content: center ;
   gap: 1rem;
@@ -205,6 +230,7 @@ button:hover {
   
 }
 
+
 .card .front {
   transform: rotateY(90deg);
   position: absolute;
@@ -220,10 +246,9 @@ button:hover {
 }
 
 .grid-card-full {
-  margin-top: 10rem;
   display: grid;
-  grid-template-columns: repeat(8, 165px);
-  gap: 0.5rem;
+  grid-template-columns: repeat(8, 220px);
+  gap: 1.5rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
 }
@@ -231,16 +256,16 @@ button:hover {
 .grid-card-med {
   margin-top: 10rem;
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  gap:1rem; 
+  grid-template-columns: repeat(4, 210px);
+  gap:2rem; 
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
 }
 
 .grid-card-small {
   display: grid;
-  grid-template-columns: repeat(3, 150px);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 220px);
+  gap: 2rem;
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
 }
@@ -252,11 +277,11 @@ button:hover {
   filter: drop-shadow(0 0 0.70rem #743cec);
   justify-content: center;
   padding: 10rem;
-
 }
 
+
 .display-single{
-  border-radius: 45px;
+  border-radius: 20px;
   margin: 4rem;
  
 }
@@ -329,6 +354,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   height: 70vh;
+  
 }
 
 #superrr-div{
@@ -336,10 +362,49 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
-.Display-all{
-  padding-top: 10rem;
+
+/* .noise {
+  position: relative;
+	z-index: 1;
+} */
+
+html,body{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-size: cover;
+  background-image: url(./fonts/v904-nunny-012.jpg);
+  display: block;
 }
 
+.Display-all{
+  padding-top: 10rem;
+  /* background-color: white; */
+  background-image: url(./fonts/v904-nunny-012.jpg);
+  /* background-repeat: inherit; */
+
+   background-repeat: round;
+   background-size: 1636px;
+
+}
+
+.footer{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  height: 2.5rem;  
+  font-family: "Riposte-Light";
+  color: rgba(26,45,183,1);
+  font-weight: 500;
+  animation: animate 30s linear infinite;
+}
+
+.footer2{
+  margin-top: auto;
+  position: absolute;
+}
 
 
 
