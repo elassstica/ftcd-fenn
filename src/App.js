@@ -50,9 +50,10 @@ function App() {
   }
 
   return (
+    <>
     <div className="App">
       <Navbar />
-      <div className="container-lg">
+      <div className="container-lg main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -75,9 +76,10 @@ function App() {
           />
         
         </Routes>
-        <Footer />
       </div>
     </div>
+       <Footer />
+    </>
   );
 }
 
