@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "./axiosClient";
 import MemCardGame from "./components/MemCardGame";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
@@ -18,9 +18,11 @@ function App() {
   const [cards, setCards] = useState([]);
   const [gameLevel, setGameLevel] = useState(12);
 
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/cardimages?level=${gameLevel}`)
+      .get(`/cardimages?level=${gameLevel}`)
       .then((res) => {
         const mappedCards = res.data.map((card) => {
           return {
@@ -33,21 +35,7 @@ function App() {
       .catch((err) => console.log(err));
   }, [gameLevel, setGameLevel]);
 
-  let component;
-  switch (window.location.pathname) {
-    case "/disclaimer":
-      component = <Disclaimer />;
-      break;
-    case "/about":
-      component = <About />;
-      break;
-    case "/download":
-      component = <Download />;
-      break;
-    case "/superrr":
-      component = <Superrr />;
-      break;
-  }
+
 
   return (
     <div className="App">
