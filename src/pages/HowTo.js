@@ -3,6 +3,7 @@ function HowTo() {
     <div>
       <div>
         <h1 className="title">How To Play This Game</h1>
+
           <div className="text">
             <ul className="text-how">
               <li>

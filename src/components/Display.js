@@ -1,23 +1,13 @@
-import axios from "axios";
+import axios from "../axiosClient";
 import { useEffect, useState } from "react";
-import carousel from 'react-bootstrap/Button';
+import carousel from "react-bootstrap/Button";
 
 function Display() {
   const [display, setDisplay] = useState([]);
 
-  // axios
-  // .get(`http://localhost:5001/display`)
-  // .then((res) => {
-  //     setCards(response.cards.principles.map((card) => {
-  //         return {
-  //             card
-  //         }
-  //     }))
-  // })
-  // .catch((err) => console.log(err))
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/cardImages/display`)
+      .get(`/cardImages/display`)
       .then((res) => {
         const cards = res.data.cards;
         const questions = res.data.questions;
@@ -47,9 +37,21 @@ function Display() {
         {display.map((card) => {
           return (
             <div className="img-display" key={card.principle.principle}>
-              <img className="display-single" src={card.principle.image} height={550} />
-              <img className="display-single" src={card.description.image} height={550} />
-              <img className="display-single" src={card.question.image} height={550} />
+              <img
+                className="display-single"
+                src={card.principle.image}
+                height={550}
+              />
+              <img
+                className="display-single"
+                src={card.description.image}
+                height={550}
+              />
+              <img
+                className="display-single"
+                src={card.question.image}
+                height={550}
+              />
             </div>
           );
         })}
