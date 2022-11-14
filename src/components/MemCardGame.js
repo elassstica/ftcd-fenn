@@ -131,7 +131,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
           </button>
         }
         <button className="button2" onClick={shuffleCards}>
-          new game
+          New game
         </button>
         <button className="button3">Turns: {turns}</button>
         <button className="button4">Matches: {match}</button>

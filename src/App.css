@@ -115,7 +115,7 @@
   font-weight: 800 !important;
   letter-spacing: 4px;
   margin-right: auto !important;
-  font-style: bold;
+  font-style: 500 !important;
   color: #ffffff !important;
   animation: animate 10s linear infinite;
   -webkit-text-stroke: 1px rgb(255, 255, 255);
@@ -123,12 +123,6 @@
 
 }
 
-
-@keyframes animate {
-  100%{
-    transform: translate(-50%, 0);
-  }
-}
 
 .sections{
   font-size: 20px;
@@ -153,6 +147,15 @@
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.bruja{
+    margin-top: 3px;
+    margin-left: 2rem;
+    width: 50px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
 
 .gameMenu {
   color: inherit;

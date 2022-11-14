@@ -1,7 +1,9 @@
+import Bruja from "../fonts/bruja2.png";
+
 function Footer() {
   return (
     <div class="footer">
-      <marquee id="footer2">© Witches Be Trippin, Inc.</marquee>
+      <marquee id="footer2"><img src={Bruja} className="bruja"/> © Witches Be Trippin, Inc.</marquee>
       {/* {<iframe className="spotify"
         src="https://open.spotify.com/embed/playlist/4MTQ3K4rnAFTEgUW5a3797?utm_source=generator"
         width="20%"

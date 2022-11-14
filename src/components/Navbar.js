@@ -34,7 +34,7 @@ function CustomLink({ to, href, children, ...props }) {
         {to && <Link className="nav-links" to={to} {...props}>
         {children}
       </Link>}
-      {href && <a target='blank' className="nav-links"  href={href}>
+      {href && <a className="nav-links"  href={href}>
         {children}
         </a>}
     </li>
