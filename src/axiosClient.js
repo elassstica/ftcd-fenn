@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://oftcg.onrender.com',
+  baseURL: "https://oftcg.onrender.com",
 });
 
 export default instance;
