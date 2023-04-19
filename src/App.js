@@ -18,7 +18,9 @@ function App() {
   const [cards, setCards] = useState([]);
   const [gameLevel, setGameLevel] = useState(12);
 
-  console.log(process.env.REACT_APP_BACKEND_URL);
+  // console.log(process.env.REACT_APP_BACKEND_URL);
+
+  const live_url = "https://oftcg.onrender.com";
 
   useEffect(() => {
     axios
@@ -35,38 +37,35 @@ function App() {
       .catch((err) => console.log(err));
   }, [gameLevel, setGameLevel]);
 
-
-
   return (
     <>
-    <div className="App">
-      <Navbar />
-      <div className="container-lg main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/download" element={<Download />} />
-          <Route path="/superrr" element={<Superrr />} />
-          <Route path="/howto" element={<HowTo />} />
-          <Route path="/display" element={<Display />} />
+      <div className="App">
+        <Navbar />
+        <div className="container-lg main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/download" element={<Download />} />
+            <Route path="/superrr" element={<Superrr />} />
+            <Route path="/howto" element={<HowTo />} />
+            <Route path="/display" element={<Display />} />
 
-          <Route
-            path="/start"
-            element={
-              <MemCardGame
-                cards={cards}
-                setCards={setCards}
-                gameLevel={gameLevel}
-                setGameLevel={setGameLevel}
-              />
-            }
-          />
-        
-        </Routes>
+            <Route
+              path="/start"
+              element={
+                <MemCardGame
+                  cards={cards}
+                  setCards={setCards}
+                  gameLevel={gameLevel}
+                  setGameLevel={setGameLevel}
+                />
+              }
+            />
+          </Routes>
+        </div>
       </div>
-    </div>
-       <Footer />
+      <Footer />
     </>
   );
 }
