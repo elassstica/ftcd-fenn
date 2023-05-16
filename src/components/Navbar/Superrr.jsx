@@ -1,4 +1,4 @@
-export default function Superrr () {
+const Superrr = () => {
     return (
         <div className="page-center">
             <div id="superrr-div">
@@ -6,6 +6,6 @@ export default function Superrr () {
             </div>
         </div>
     )
-
-        
 }
+
+export default Superrr;

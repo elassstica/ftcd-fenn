@@ -1,0 +1,80 @@
+.wrapper_game {
+  margin: 32px;
+}
+
+@media (min-width: 768px) {
+  .wrapper_game {
+    margin: 32px auto;
+    width: 90%;
+  }
+}
+
+.controls {
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+button {
+  padding: 32px 0;
+  height: 40px;
+  background: none;
+  border: 2px solid rgb(116,61,235);
+  padding: 6px 12px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 20px;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s
+}
+
+@media (min-width: 1224px) {
+  button {
+    width: auto;
+  }
+}
+
+button:hover {
+  background: blueviolet;
+  color: rgb(116,61,235);
+  background-color: #d9f794;
+}
+
+.btn_game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+@media (min-width: 476px) {
+  button {
+    width: 24%;
+  }
+
+  .btn_game {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1224px) {
+  button {
+    width: auto;
+  }
+
+  .controls {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+.game-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}

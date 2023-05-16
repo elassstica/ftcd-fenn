@@ -1,8 +1,6 @@
 export default function Disclaimer() {
   return (
-    <div className="page-center">
-      <div>
-
+    <div className="wrapper">
       <h1 className="title">Disclaimer</h1>
       <p className="text">
         Please note that this is an adaptation of the original{" "}
@@ -17,7 +15,6 @@ export default function Disclaimer() {
         our web development bootcamp. In other words, we are just fangirling
         them. Hard.
       </p>
-      </div>
     </div>
   );
 }

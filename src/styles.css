@@ -1,0 +1,75 @@
+/* This file styles the general application. */
+
+/* fonts */
+
+@font-face {
+  font-family: "Univers";
+  src: local("UniversOblique"),
+  url("fonts/UniversOblique.ttf") format("truetype"),
+} 
+
+@font-face {
+  font-family: "Basteleur-Bold";
+  src: local("Basteleur-Bold"),
+  url("./fonts/Basteleur-Bold.otf") format("opentype")
+}
+
+@font-face {
+  font-family: "Riposte-Light";
+  src: local("Riposte-Light"),
+  url("./fonts/Riposte-Light.otf") format("opentype")
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./fonts/v904-nunny-012.jpg);
+  background-size: 256rem;
+  background-repeat: repeat;
+}
+
+.wrapper {
+  margin: 32px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 32px auto;
+    width: 50%;
+  }
+}
+
+.title {
+  font-family: "Basteleur-Bold";
+  font-family: "Riposte-Light";
+  font-weight: 500;
+  text-align: center;
+  color: rgba(26,45,183,1);
+  text-transform: uppercase;
+  font-size: 48px;
+}
+
+.text {
+  font-family: "Riposte-Light";
+  text-align: center;
+  margin: auto;
+  list-style: none;
+  font-size: 20px;
+}
+
+.text-how {
+  text-align: left;
+  list-style: none;
+  line-height: 3rem;
+}
+
+.text-how span {
+  font-weight: 900;
+}

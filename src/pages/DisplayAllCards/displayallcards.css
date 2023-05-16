@@ -1,0 +1,32 @@
+.wrapper_display-all {
+  margin: 32px;
+}
+
+@media (min-width: 768px) {
+  .wrapper_display-all {
+    margin: 32px auto;
+    width: 70%;
+  }
+}
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.display-all {
+  border-radius: 20px;
+  padding: 8px;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .collection {
+    flex-direction: row;
+  }
+
+  .display-all {
+    max-width: 30%;
+  }
+}
