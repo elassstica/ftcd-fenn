@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import SingleCard from "./SingleCard";
-import GameMenu from "./GameMenu";
+import SingleCard from "../SingleCard/SingleCard";
+import DeckSize from "../DeckSize/DeckSize";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './memcardgame.css'
 
 function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const [deck, setDeck] = useState([]);
@@ -25,19 +26,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  // select class for game level
-  const selectClass = () => {
-    if (+gameLevel === 3) {
-      return "grid-card-small";
-    } else if (+gameLevel === 6) {
-      return "grid-card-med";
-    } else {
-      return "grid-card-full";
-    }
-  };
-
   // shuffle cards
-
   const shuffleCards = () => {
     const shuffledCards = [...cards].sort(() => {
       return Math.random() - 0.5;
@@ -50,7 +39,6 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   };
 
   // reset choices & increase turn
-
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
@@ -59,7 +47,6 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   };
 
   // start game automatically
-
   useEffect(() => {
     shuffleCards();
     // eslint-disable-next-line
@@ -74,10 +61,6 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   const matchNotify = () => {
     toast("It's a match!");
   };
-
-  // const resetMatch = () => {
-  //   setMatch(0)
-  // }
 
   // compare 2 selected cards
 
@@ -110,7 +93,7 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
   }, [choiceOne, choiceTwo]);
 
   return (
-    <div>
+    <div className="wrapper_game">
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -124,32 +107,30 @@ function MemCardGame({ cards, setCards, gameLevel, setGameLevel }) {
         theme="light"
       />
       <div className="controls">
-        <GameMenu setGameLevel={setGameLevel} clearMatch={clearMatch} />
+        <DeckSize setGameLevel={setGameLevel} clearMatch={clearMatch} />
+        <div className="btn_game">
         {
-          <button className="button1" onClick={resetTurn}>
+          <button onClick={resetTurn}>
             Next Move
           </button>
         }
-        <button className="button2" onClick={shuffleCards}>
-          New game
+        <button onClick={shuffleCards}>
+          New Game
         </button>
-        <button className="button3">Turns: {turns}</button>
-        <button className="button4">Matches: {match}</button>
+        <button>Turns: {turns}</button>
+        <button>Matches: {match}</button>
       </div>
-      <div className="page-center">
-      <div className={selectClass()}>
+      </div>
+      <div className="game-area">
         {deck.map((card) => (
-          <div className="card-card">
-            <SingleCard
-              key={card._id}
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-          </div>
+          <SingleCard
+            key={card._id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
+          />
         ))}
-      </div>
       </div>
     </div>
   );

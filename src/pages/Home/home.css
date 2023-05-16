@@ -1,0 +1,9 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-start {
+  width: 100%;
+}

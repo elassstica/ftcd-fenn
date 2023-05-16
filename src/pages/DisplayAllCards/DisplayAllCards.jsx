@@ -1,8 +1,8 @@
-import axios from "../axiosClient";
+import './displayallcards.css';
+import axios from "../../axiosClient";
 import { useEffect, useState } from "react";
-import carousel from "react-bootstrap/Button";
 
-function Display() {
+const Display = () => {
   const [display, setDisplay] = useState([]);
 
   useEffect(() => {
@@ -31,32 +31,30 @@ function Display() {
   }, []);
   return (
     <div>
-    <div className="Display-all">
-      <div>
+      <div className='wrapper_display-all'>
         <h1 className="title">FEMINIST TECH PRINCIPLES</h1>
         {display.map((card) => {
           return (
-            <div className="img-display" key={card.principle.principle}>
+            <div className="collection" key={card.principle.principle}>
               <img
-                className="display-single"
+                className="display-all"
                 src={card.principle.image}
-                height={550}
+                alt=""
               />
               <img
-                className="display-single"
+                className="display-all"
                 src={card.description.image}
-                height={550}
+                alt=""
               />
               <img
-                className="display-single"
+                className="display-all"
                 src={card.question.image}
-                height={550}
+                alt=""
               />
             </div>
           );
         })}
       </div>
-    </div>
     </div>
   );
 }

@@ -1,18 +1,19 @@
-import "./App.css";
+// import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "./axiosClient";
-import MemCardGame from "./components/MemCardGame";
+import MemCardGame from "./components/MemCardGame/MemCardGame";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Disclaimer from "./pages/Disclaimer";
-import Download from "./pages/Original";
-import Superrr from "./pages/Superrr";
+import Navbar from "./components/Navbar/Navbar";
+import About from "./pages/About/About";
+import Disclaimer from "./pages/Disclaimer/Disclaimer";
+import Download from "./pages/OriginalDeck/Original";
+import Superrr from "./components/Navbar/Superrr";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import HowTo from "./pages/HowTo";
-import Display from "./components/Display";
-import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
+import HowTo from "./pages/Home/HowTo";
+import Display from "./pages/DisplayAllCards/DisplayAllCards";
+import Footer from "./components/Footer/Footer";
+import "./styles.css";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -41,7 +42,7 @@ function App() {
     <>
       <div className="App">
         <Navbar />
-        <div className="container-lg main">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -50,7 +51,6 @@ function App() {
             <Route path="/superrr" element={<Superrr />} />
             <Route path="/howto" element={<HowTo />} />
             <Route path="/display" element={<Display />} />
-
             <Route
               path="/start"
               element={
@@ -63,9 +63,9 @@ function App() {
               }
             />
           </Routes>
-        </div>
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
