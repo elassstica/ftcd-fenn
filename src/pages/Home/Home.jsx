@@ -8,9 +8,9 @@ const Home = () => {
 
   return (
     <div className="wrapper home">
-      <h1 id="homepage" className="title">Homepage</h1>
+      <h1 id="homepage" className="title">Welcome</h1>
       <p className="text">
-        Welcome to the Online Feminist Tech Card Game, we are thrilled to have
+        to the Online Feminist Tech Card Game, we are thrilled to have
         you!
       </p>
       <button
